@@ -24,3 +24,11 @@ jobs:
           tags: vinitkumar01/todo-app-backend:${{ github.sha }}
 
       ## steps to deploy to a VM
+##      - name: Deploy to VM
+##        run: |
+##          echo "${{ secrets.SSH_PRIVATE_KEY }}" &> ~/ssh_key
+##          mkdir -p /home/runner/.ssh
+##          touch /home/runner/.ssh/known_hosts
+##          echo "${{ secrets.KNOWN_HOSTS }}" &> /home/runner/.ssh/known_hosts
+##          chmod 700 /home/runner/ssh_key
+##          ssh -o StrictHostKeyChecking=no -i ~/ssh_key root@ip_of_your_vm -t "docker stop todo-app-backend && docker run --name todo-app-backend -d -p 8080:8080 vinitkumar01/todo-app-backend:${{ github.sha }}"
